@@ -17,9 +17,11 @@
       <%= form.text_field :name, class: 'form-control' %>
     </div>
   </div>
-  <div class="field">
-    <%= form.label :ip %>
-    <%= form.text_field :ip %>
+  <div class="field form-group">
+    <%= form.label :ip, "IP Address" , class: 'col-sm-2 control-label'%>
+    <div class="col-sm-10">
+      <%= form.text_field :ip %>
+    </div>
   </div>
 
   <div class="field">
