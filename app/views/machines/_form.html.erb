@@ -13,25 +13,27 @@
 
   <div class="field form-group">
     <%= form.label :name, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
+    <div class="col-sm-6">
       <%= form.text_field :name, class: 'form-control' %>
     </div>
   </div>
   <div class="field form-group">
     <%= form.label :ip, "IP Address", class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
+    <div class="col-sm-6">
       <%= form.text_field :ip, class: 'form-control' %>
     </div>
   </div>
 
   <div class="field form-group">
     <%= form.label :port, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
+    <div class="col-sm-6">
       <%= form.number_field :port, class: 'form-control'  %>
     </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
