@@ -1,39 +1,41 @@
 <%= form_with(model: machine, local: true) do |form| %>
-  <% if machine.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(machine.errors.count, "error") %> prohibited this machine from being saved:</h2>
-
-      <ul>
-        <% machine.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="form-horizontal">
+    <% if machine.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(machine.errors.count, "error") %> prohibited this machine from being saved:</h2>
+  
+        <ul>
+          <% machine.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field form-group">
+      <%= form.label :name, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field form-group">
-    <%= form.label :name, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-6">
-      <%= form.text_field :name, class: 'form-control' %>
+    <div class="field form-group">
+      <%= form.label :ip, "IP Address", class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= form.text_field :ip, class: 'form-control' %>
+      </div>
     </div>
-  </div>
-  <div class="field form-group">
-    <%= form.label :ip, "IP Address", class: 'col-sm-2 control-label' %>
-    <div class="col-sm-6">
-      <%= form.text_field :ip, class: 'form-control' %>
+  
+    <div class="field form-group">
+      <%= form.label :port, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= form.number_field :port, class: 'form-control'  %>
+      </div>
     </div>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :port, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-6">
-      <%= form.number_field :port, class: 'form-control'  %>
-    </div>
-  </div>
-
-  <div class="actions form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <%= form.submit %>
+  
+    <div class="actions form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= form.submit %>
+      </div>
     </div>
   </div>
 <% end %>
