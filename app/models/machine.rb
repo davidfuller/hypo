@@ -25,7 +25,7 @@ class Machine < ApplicationRecord
   end
   
   private
-  def read_message
+  def self.read_message
     "Done done"
   end
   
