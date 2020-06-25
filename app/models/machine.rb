@@ -10,8 +10,8 @@ class Machine < ApplicationRecord
     socket = TCPSocket.open("192.168.1.168", 9993)
     socket.puts "play\n"
     a = []
-    while message = socket.gets             # Read lines from the socket
-      a.push(message.chomp)
+    while (line = socket.gets) && line.chomp != '' # While the client is connected, and hasn't sent us a blank line yet...
+      a << line
     end
     socket.close
     a
