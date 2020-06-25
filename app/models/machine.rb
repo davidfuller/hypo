@@ -9,24 +9,26 @@ class Machine < ApplicationRecord
   def self.play
     socket = TCPSocket.open("192.168.1.168", 9993)
     socket.puts "play\n"
-    a = []
-    while (line = socket.gets) && line.chomp != '' # While the client is connected, and hasn't sent us a blank line yet...
-      a << line
-    end
+    messages = read_message(socket)
     socket.close
-    a
+    messages
   end
 
   def self.stop
     socket = TCPSocket.open("192.168.1.168", 9993)
     socket.puts "stop\n"
+    messages = read_message(socket)
     socket.close
-    read_message
+    messages
   end
   
   private
-  def self.read_message
-    "Done done"
+  def self.read_message(sock)
+    lines = []
+    while (line = sock.gets) && line.chomp != '' # While the client is connected, and hasn't sent us a blank line yet...
+      lines << line
+    end
+    lines
   end
   
 end
