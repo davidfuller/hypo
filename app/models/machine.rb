@@ -4,7 +4,7 @@ class Machine < ApplicationRecord
 
   def self.connect
     @socket = TCPSocket.open("192.168.1.168", 9993)
-    "Hello"
+    read_message
   end
   
   def self.close
