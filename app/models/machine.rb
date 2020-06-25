@@ -21,6 +21,12 @@ class Machine < ApplicationRecord
     socket = TCPSocket.open("192.168.1.168", 9993)
     socket.puts "stop\n"
     socket.close
-    "Done"
+    read_message
   end
+  
+  private
+  def read_message
+    "Done done"
+  end
+  
 end
