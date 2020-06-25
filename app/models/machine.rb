@@ -13,12 +13,12 @@ class Machine < ApplicationRecord
   end
   
   def self.play
-    @socket.puts "play\n"
+    @socket.puts "play\n\n"
     read_message
   end
 
   def self.stop
-    @socket.puts "stop\r\n"
+    @socket.puts "stop\r\n\r\n"
     read_message
   end
   
