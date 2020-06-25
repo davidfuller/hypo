@@ -22,6 +22,11 @@ class Machine < ApplicationRecord
     read_message
   end
   
+  def self.info
+    @socket.puts "transport info\r\n"
+    read_messages
+  end
+  
   private
   def self.read_messages
     lines = []
