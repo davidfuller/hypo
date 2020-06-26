@@ -61,6 +61,10 @@ class MachinesController < ApplicationController
     end
   end
 
+  def connect
+    redirect_to machines_url, notice: 'Connected'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_machine
