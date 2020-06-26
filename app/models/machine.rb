@@ -9,6 +9,7 @@ class Machine < ApplicationRecord
   
   def self.close
     @socket.close
+    @socket = nil
     "Closed"
   end
   
@@ -25,6 +26,10 @@ class Machine < ApplicationRecord
   def self.info
     @socket.puts "transport info\r\n"
     read_messages
+  end
+
+  def self.is_connected
+    !@socket.nil?
   end
   
   private
