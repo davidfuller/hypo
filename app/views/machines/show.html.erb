@@ -15,6 +15,16 @@
   <%= @machine.port %>
 </p>
 
+<% if @messages %>
+  <div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <% @messages.each do |message| %>
+        <li class="list-group-item"><%= message %></li>
+      <% end %>    
+    </ul>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_machine_path(@machine) %> |
 <%= link_to 'Back', machines_path %>
-<%= link_to 'Connect', connect_machines_path %>
+<%= link_to 'Connect', connect_machine_path %>

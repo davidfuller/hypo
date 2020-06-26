@@ -1,5 +1,5 @@
 class MachinesController < ApplicationController
-  before_action :set_machine, only: [:show, :edit, :update, :destroy]
+  before_action :set_machine, only: [:show, :edit, :update, :destroy, :connect]
 
   # GET /machines
   # GET /machines.json
@@ -62,7 +62,11 @@ class MachinesController < ApplicationController
   end
 
   def connect
-    redirect_to machines_url, notice: 'Connected'
+    @messages = @machine.connect
+    logger.debug '=====>' 
+    logger.debug @messages
+    flash.notice = 'Connected'
+    render :show
   end
 
   private

@@ -2,8 +2,8 @@ class Machine < ApplicationRecord
 
   require 'socket'
 
-  def self.connect
-    @socket = TCPSocket.open("192.168.1.168", 9993)
+  def connect
+    @socket = TCPSocket.open(self.ip, self.port)
     read_messages
   end
   
@@ -34,7 +34,7 @@ class Machine < ApplicationRecord
   end
   
   private
-  def self.read_messages
+  def read_messages
     lines = []
     while (line = @socket.gets) && line.chomp != '' # While the client is connected, and hasn't sent us a blank line yet...
       lines << line.chomp

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :machines do
-    collection do
+    member do
       get 'connect'
     end
   end
