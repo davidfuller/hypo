@@ -5,6 +5,7 @@
     <div class = 'col-3'>
       <strong>Name:</strong>
       <%= @machine.name %>
+      <%= button_to 'Connect', connect_machine_path, class: 'btn' %>
     </div>
     <div class = 'col-3'>
       <strong>IP Address</strong>
