@@ -23,14 +23,18 @@
     </div>
   <% end %>
 
-  <% if @messages %>
-    <div class="card" style="width: 18rem;">
-      <% @messages.each do |message| %>
-        <%= message %><br />
-      <% end %>    
+  <div class="card border-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Machine Response</div>
+    <div class="card-body text-primary">
+      <p class="card-text">
+        <% if @messages %>
+          <% @messages.each do |message| %>
+            <%= message %><br />
+          <% end %>    
+        <% end %>
+      </p>
     </div>
-  <% end %>
-
+  </div>
 <%= link_to 'Edit', edit_machine_path(@machine) %> |
 <%= link_to 'Back', machines_path %>
 <%= link_to 'Connect', connect_machine_path, class: 'btn btn-info' %>
