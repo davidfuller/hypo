@@ -70,6 +70,7 @@ class MachinesController < ApplicationController
   def close
     @messages = @machine.close
     render :show
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
