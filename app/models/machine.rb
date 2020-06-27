@@ -19,8 +19,10 @@ class Machine < ApplicationRecord
   end
   
   def play
+    messages = connect
     @socket.puts "play\n\n"
-    read_message
+    messages << read_message
+    messages << close
   end
 
   def self.stop
