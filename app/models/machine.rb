@@ -7,7 +7,7 @@ class Machine < ApplicationRecord
     read_messages
   end
   
-  def self.close
+  def close
     @socket.puts "quit\r\n\r\n"
     @socket.close
     @socket = nil

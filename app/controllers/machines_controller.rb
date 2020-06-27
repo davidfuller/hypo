@@ -1,5 +1,5 @@
 class MachinesController < ApplicationController
-  before_action :set_machine, only: [:show, :edit, :update, :destroy, :connect]
+  before_action :set_machine, only: [:show, :edit, :update, :destroy, :connect, :close]
 
   # GET /machines
   # GET /machines.json
@@ -66,6 +66,10 @@ class MachinesController < ApplicationController
     @messages.prepend 'Connected'
     render :show
   end
+  
+  def close
+    @messages = @machine.close
+    render :show
 
   private
     # Use callbacks to share common setup or constraints between actions.
