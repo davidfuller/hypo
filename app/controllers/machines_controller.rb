@@ -63,9 +63,7 @@ class MachinesController < ApplicationController
 
   def connect
     @messages = @machine.connect
-    logger.debug '=====>' 
-    logger.debug @messages
-    flash.notice = 'Connected'
+    @messages.prepend 'Connected'
     render :show
   end
 
