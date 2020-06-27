@@ -15,11 +15,13 @@
       <%= @machine.port %>
     </div>
   </div>
-  <div class='row'>
-    <div class='col-1'>
-      <%= button_to 'Connect', connect_machine_path, method: :get, class: 'btn btn-primary' %>
+  <% if !@machine.is_connected %>
+    <div class='row'>
+      <div class='col-1'>
+        <%= button_to 'Connect', connect_machine_path, method: :get, class: 'btn btn-primary' %>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <% if @messages %>
     <div class="card" style="width: 18rem;">
