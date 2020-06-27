@@ -1,5 +1,5 @@
 class MachinesController < ApplicationController
-  before_action :set_machine, only: [:show, :edit, :update, :destroy, :connect, :close]
+  before_action :set_machine, only: [:show, :edit, :update, :destroy, :connect]
 
   # GET /machines
   # GET /machines.json
