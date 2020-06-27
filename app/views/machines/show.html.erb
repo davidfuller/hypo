@@ -1,30 +1,30 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @machine.name %>
-</p>
-
-<p>
-  <strong>Ip:</strong>
-  <%= @machine.ip %>
-</p>
-
-<p>
-  <strong>Port:</strong>
-  <%= @machine.port %>
-</p>
-
-<% if @messages %>
-  <div class="card" style="width: 18rem;">
-    <ul class="list-group list-group-flush">
-      <% @messages.each do |message| %>
-        <li class="list-group-item"><%= message %></li>
-      <% end %>    
-    </ul>
+<div class = 'container'>
+  <h2>Machine Control</h2>
+  <div class = 'row'>
+    <div class = 'col-3'>
+      <strong>Name:</strong>
+      <%= @machine.name %>
+    </div>
+    <div class = 'col-3'>
+      <strong>IP Address</strong>
+      <%= @machine.ip %>
+    </div>
+    <div class = 'col-3'>
+      <strong>Port:</strong>
+      <%= @machine.port %>
+    </div>
   </div>
-<% end %>
+
+  <% if @messages %>
+    <div class="card" style="width: 18rem;">
+      <% @messages.each do |message| %>
+        <%= message %><br />
+      <% end %>    
+    </div>
+  <% end %>
 
 <%= link_to 'Edit', edit_machine_path(@machine) %> |
 <%= link_to 'Back', machines_path %>
 <%= link_to 'Connect', connect_machine_path %>
+</div>
