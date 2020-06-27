@@ -29,7 +29,7 @@ class Machine < ApplicationRecord
     read_messages
   end
 
-  def self.is_connected
+  def is_connected
     !@socket.nil?
   end
   

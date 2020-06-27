@@ -5,7 +5,6 @@
     <div class = 'col-3'>
       <strong>Name:</strong>
       <%= @machine.name %>
-      <%= button_to 'Connect', connect_machine_path, method: :get, class: 'btn btn-primary' %>
     </div>
     <div class = 'col-3'>
       <strong>IP Address</strong>
@@ -14,6 +13,11 @@
     <div class = 'col-3'>
       <strong>Port:</strong>
       <%= @machine.port %>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-1'>
+      <%= button_to 'Connect', connect_machine_path, method: :get, class: 'btn btn-primary' %>
     </div>
   </div>
 
@@ -27,5 +31,5 @@
 
 <%= link_to 'Edit', edit_machine_path(@machine) %> |
 <%= link_to 'Back', machines_path %>
-<%= link_to 'Connect', connect_machine_path %>
+<%= link_to 'Connect', connect_machine_path, class: 'btn btn-info' %>
 </div>
