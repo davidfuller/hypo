@@ -14,7 +14,7 @@ class Machine < ApplicationRecord
     "Closed"
   end
   
-  def self.play
+  def play
     @socket.puts "play\n\n"
     read_message
   end
@@ -42,7 +42,7 @@ class Machine < ApplicationRecord
     lines
   end
   
-  def self.read_message
+  def read_message
     @socket.gets
   end
   
