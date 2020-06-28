@@ -59,7 +59,7 @@ class Machine < ApplicationRecord
   end
   
   def simple_command(command)
-    messages = []
+    messages = [command.chomp]
     messages << connect
     if @status == 'Good'
       @socket.puts command
