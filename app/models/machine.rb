@@ -5,10 +5,11 @@ class Machine < ApplicationRecord
   def connect
     #@socket = TCPSocket.open(self.ip, self.port)
     begin
+      @status = 'Good'
       @socket = Socket.tcp(self.ip, self.port, nil, nil, connect_timeout: 2 )
       read_messages
-    rescue StandardError => e
-      e.inspect
+    rescue Errno::ETIMEDOUT
+      @status = 'Timeout'
     end
   end
   
@@ -25,9 +26,12 @@ class Machine < ApplicationRecord
   
   def play
     messages = connect
-    @socket.puts "play\r\n"
-    messages << read_message
-    messages << close
+    if @status == 'Good'
+      @socket.puts "play\r\n"
+      messages << read_message
+      messages << close
+    end
+    messages << @status
   end
 
   def stop
