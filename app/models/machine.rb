@@ -10,6 +10,7 @@ class Machine < ApplicationRecord
       read_messages
     rescue Errno::ETIMEDOUT
       @status = 'Timeout'
+      'Not connected'
     end
   end
   
@@ -25,14 +26,7 @@ class Machine < ApplicationRecord
   end
   
   def play
-    messages = []
-    messages << connect
-    if @status == 'Good'
-      @socket.puts "play\r\n"
-      messages << read_message
-      messages << close
-    end
-    messages << @status
+    simple_command 'play\r\n'
   end
 
   def stop
@@ -63,5 +57,17 @@ class Machine < ApplicationRecord
   def read_message
     @socket.gets.chomp
   end
+  
+  def simple_command(command)
+    messages = []
+    messages << connect
+    if @status == 'Good'
+      @socket.puts command
+      messages << read_message
+      messages << close
+    end
+    messages << @status
+  end
+    
   
 end
