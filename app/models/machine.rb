@@ -26,7 +26,7 @@ class Machine < ApplicationRecord
   end
   
   def play
-    simple_command 'play\r\n'
+    simple_command "play\r\n"
   end
 
   def stop
