@@ -20,14 +20,16 @@ class Machine < ApplicationRecord
   
   def play
     messages = connect
-    @socket.puts "play\n\n"
+    @socket.puts "play\r\n"
     messages << read_message
     messages << close
   end
 
-  def self.stop
-    @socket.puts "stop\r\n\r\n"
-    read_message
+  def stop
+    messages = connect
+    @socket.puts "stop\r\n"
+    messages << read_message
+    messages << close
   end
   
   def self.info
@@ -49,7 +51,7 @@ class Machine < ApplicationRecord
   end
   
   def read_message
-    @socket.gets
+    @socket.gets.chomp
   end
   
 end
