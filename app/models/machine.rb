@@ -25,7 +25,8 @@ class Machine < ApplicationRecord
   end
   
   def play
-    messages = connect
+    messages = []
+    messages << connect
     if @status == 'Good'
       @socket.puts "play\r\n"
       messages << read_message
