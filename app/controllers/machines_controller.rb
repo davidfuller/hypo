@@ -1,5 +1,5 @@
 class MachinesController < ApplicationController
-  before_action :set_machine, only: [:show, :edit, :update, :destroy, :connect]
+  before_action :set_machine, only: [:show, :edit, :update, :destroy, :play, :stop]
 
   # GET /machines
   # GET /machines.json
@@ -62,7 +62,7 @@ class MachinesController < ApplicationController
   end
 
   def play
-    @messages = @machine.plat
+    @messages = @machine.play
     render :show
   end
   
