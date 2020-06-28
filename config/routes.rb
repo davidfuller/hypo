@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :machines do
     member do
-      get 'connect'
-      get 'close'
+      get 'play'
+      get 'stop'
     end
   end
   root to: 'home#index'

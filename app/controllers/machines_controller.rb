@@ -61,14 +61,13 @@ class MachinesController < ApplicationController
     end
   end
 
-  def connect
-    @messages = @machine.connect
-    @messages.prepend 'Connected'
+  def play
+    @messages = @machine.plat
     render :show
   end
   
-  def close
-    @messages = @machine.close
+  def stop
+    @messages = @machine.stop
     render :show
   end
 

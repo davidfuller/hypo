@@ -17,11 +17,10 @@
   </div>
   <div class='row'>
     <div class='col-1'>
-      <% if !@machine.is_connected %>
-        <%= button_to 'Connect', connect_machine_path, method: :get, class: 'btn btn-primary' %>
-      <% else %>
-        <%= button_to 'Close', close_machine_path, method: :get, class: 'btn btn-danger' %>
-      <% end %>
+      <%= button_to 'Play', play_machine_path, method: :get, class: 'btn btn-primary' %>
+    </div>
+    <div class='col-1'>
+      <%= button_to 'Stop', stop_machine_path, method: :get, class: 'btn btn-primary' %>
     </div>
   </div>
 
