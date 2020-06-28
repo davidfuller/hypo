@@ -3,7 +3,8 @@ class Machine < ApplicationRecord
   require 'socket'
 
   def connect
-    @socket = TCPSocket.open(self.ip, self.port)
+    #@socket = TCPSocket.open(self.ip, self.port)
+    @socket = Socket.tcp(self.ip, self.port, nil, nil, { connect_timeout: 2 })
     read_messages
   end
   
