@@ -30,13 +30,10 @@ class Machine < ApplicationRecord
   end
 
   def stop
-    messages = connect
-    @socket.puts "stop\r\n"
-    messages << read_message
-    messages << close
+    simple_command "stop\r\n"
   end
   
-  def self.info
+  def info
     @socket.puts "transport info\r\n"
     read_messages
   end
@@ -64,6 +61,7 @@ class Machine < ApplicationRecord
     if @status == 'Good'
       @socket.puts command
       messages << read_message
+      messages += info
       messages << close
     end
     messages << @status
