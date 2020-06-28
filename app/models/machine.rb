@@ -5,7 +5,7 @@ class Machine < ApplicationRecord
   def connect
     #@socket = TCPSocket.open(self.ip, self.port)
     begin
-      @socket = Socket.tcp(self.ip, self.port, nil, nil, { connect_timeout: 2 })
+      @socket = Socket.tcp(self.ip, self.port, nil, nil, connect_timeout: 2 )
       read_messages
     rescue StandardError => e
       e.inspect
