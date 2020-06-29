@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slot: 1
+  number: 1
+  name: MyString
+  filename: MyString
+  timecode: MyString
+  duration: MyString
+  machine: one
+
+two:
+  slot: 1
+  number: 1
+  name: MyString
+  filename: MyString
+  timecode: MyString
+  duration: MyString
+  machine: two

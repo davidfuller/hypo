@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Slot:</strong>
+  <%= @clip.slot %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @clip.number %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @clip.name %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @clip.filename %>
+</p>
+
+<p>
+  <strong>Timecode:</strong>
+  <%= @clip.timecode %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @clip.duration %>
+</p>
+
+<p>
+  <strong>Machine:</strong>
+  <%= @clip.machine_id %>
+</p>
+
+<%= link_to 'Edit', edit_clip_path(@clip) %> |
+<%= link_to 'Back', clips_path %>

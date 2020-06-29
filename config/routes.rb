@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clips
   resources :machines do
     member do
       get 'play'
