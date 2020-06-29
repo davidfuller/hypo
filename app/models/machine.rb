@@ -10,7 +10,7 @@ class Machine < ApplicationRecord
       read_messages
     rescue Errno::ETIMEDOUT
       @status = 'Timeout'
-      'Not connected'
+      message = ['Not connected']
     end
   end
   
