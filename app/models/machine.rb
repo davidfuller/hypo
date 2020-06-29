@@ -1,6 +1,8 @@
 class Machine < ApplicationRecord
 
   require 'socket'
+  
+  has_many :clips
 
   def connect
     #@socket = TCPSocket.open(self.ip, self.port)
