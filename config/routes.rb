@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     member do
       get 'play'
       get 'stop'
+      get 'list'
     end
   end
   root to: 'home#index'

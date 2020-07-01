@@ -35,6 +35,10 @@ class Machine < ApplicationRecord
     simple_command "stop\r\n"
   end
   
+  def list
+    simple_command "clips get\r\n"
+  end
+  
   def info
     @socket.puts "transport info\r\n"
     read_messages

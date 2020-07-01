@@ -1,5 +1,5 @@
 class MachinesController < ApplicationController
-  before_action :set_machine, only: [:show, :edit, :update, :destroy, :play, :stop]
+  before_action :set_machine, only: [:show, :edit, :update, :destroy, :play, :stop, :list]
 
   # GET /machines
   # GET /machines.json
@@ -68,6 +68,11 @@ class MachinesController < ApplicationController
   
   def stop
     @messages = @machine.stop
+    render :show
+  end
+  
+  def list
+    @messages = @machine.list
     render :show
   end
 
