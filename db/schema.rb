@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_204946) do
+ActiveRecord::Schema.define(version: 2020_07_02_160410) do
 
   create_table "clips", force: :cascade do |t|
     t.integer "slot"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_06_29_204946) do
     t.integer "machine_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "volume"
     t.index ["machine_id"], name: "index_clips_on_machine_id"
   end
 

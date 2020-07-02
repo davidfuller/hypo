@@ -11,40 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group row">
     <%= form.label :slot %>
     <%= form.number_field :slot %>
   </div>
 
-  <div class="field">
+  <div class="field form-group row">
     <%= form.label :number %>
     <%= form.number_field :number %>
   </div>
 
-  <div class="field">
+  <div class="field form-group row">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
+  <div class="field form-group row">
     <%= form.label :filename %>
     <%= form.text_field :filename %>
   </div>
 
-  <div class="field">
+  <div class="field form-group row">
     <%= form.label :timecode %>
     <%= form.text_field :timecode %>
   </div>
 
-  <div class="field">
+  <div class="field form-group row">
     <%= form.label :duration %>
     <%= form.text_field :duration %>
   </div>
 
-  <div class="field">
+  <div class="field form-group row">
     <%= form.label :machine_id %>
+    <%= form.collection_select(:machine_id, Machine.all, :id, :name, {:include_blank => 'Please Select A Machine'}) %>
     <%= form.text_field :machine_id %>
   </div>
+
+  <div class="field form-group row">
+    <%= form.label :volume, "Volume name" %>
+    <%= form.text_field :volume %>
+  </div>
+  
 
   <div class="actions">
     <%= form.submit %>
