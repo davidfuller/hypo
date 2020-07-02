@@ -12,48 +12,64 @@
   <% end %>
 
   <div class="field form-group row">
-    <%= form.label :slot %>
-    <%= form.number_field :slot %>
+    <%= form.label :slot, class: 'col-2 col-form-label pull-right' %>
+    <div class="col-6">
+      <%= form.text_field :slot %>
+    </div>
   </div>
 
   <div class="field form-group row">
-    <%= form.label :number %>
-    <%= form.number_field :number %>
+    <%= form.label :number, class: 'col-2 col-form-label pull-right'  %>
+    <div class="col-6">
+      <%= form.number_field :number %>
+    </div>
   </div>
 
   <div class="field form-group row">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: 'col-2 col-form-label pull-right'  %>
+    <div class="col-6">
+      <%= form.text_field :name %>
+    </div>
   </div>
 
   <div class="field form-group row">
-    <%= form.label :filename %>
-    <%= form.text_field :filename %>
+    <%= form.label :filename, class: 'col-2 col-form-label pull-right'  %>
+    <div class="col-6">
+      <%= form.text_field :filename %>
+    </div>
   </div>
 
   <div class="field form-group row">
-    <%= form.label :timecode %>
-    <%= form.text_field :timecode %>
+    <%= form.label :timecode, class: 'col-2 col-form-label pull-right'  %>
+    <div class="col-6">
+      <%= form.text_field :timecode %>
+    </div>
   </div>
 
   <div class="field form-group row">
-    <%= form.label :duration %>
-    <%= form.text_field :duration %>
+    <%= form.label :duration, class: 'col-2 col-form-label pull-right'  %>
+    <div class="col-6">
+      <%= form.text_field :duration %>
+    </div>
   </div>
 
   <div class="field form-group row">
-    <%= form.label :machine_id %>
-    <%= form.collection_select(:machine_id, Machine.all, :id, :name, {:include_blank => 'Please Select A Machine'}) %>
-    <%= form.text_field :machine_id %>
+    <%= form.label :machine_id, class: 'col-2 col-form-label pull-right'  %>
+    <div class="col-6">
+      <%= form.collection_select(:machine_id, Machine.all, :id, :name, {:include_blank => 'Please Select A Machine'}) %>
+    </div>
   </div>
 
   <div class="field form-group row">
-    <%= form.label :volume, "Volume name" %>
-    <%= form.text_field :volume %>
+    <%= form.label :volume, "Volume name", class: 'col-2 col-form-label pull-right'  %>
+    <div class="col-6">
+      <%= form.text_field :volume %>
+    </div>
   </div>
-  
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group row">
+    <div class="col-6 offset-2">
+      <%= form.submit nil, class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
