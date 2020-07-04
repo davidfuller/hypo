@@ -44,7 +44,7 @@ class Machine < ApplicationRecord
         result = Hash.new
         result[:number] = elements[0].to_i
         result[:duration] = elements[elements.length - 1]
-        result[:timecode] = elements[element.length - 2]
+        result[:timecode] = elements[elements.length - 2]
         filename = ''
         elements[1..elements.length-3].each do |section|
           filname = filename + ' ' + section
