@@ -39,6 +39,10 @@ class Machine < ApplicationRecord
     simple_command "clips get\r\n"
   end
   
+  def slot_info
+    info_command "slot info\r\n"
+  end
+  
   def info
     @socket.puts "transport info\r\n"
     read_messages
@@ -71,6 +75,18 @@ class Machine < ApplicationRecord
       messages << close
     end
     messages << @status
+  end
+  
+  def info_commad(command)
+    connect
+    if @status == 'Good'
+      @socket.puts command
+      messages = read_messages
+      close
+    else
+      messages = []
+    end
+    messages
   end
     
   
