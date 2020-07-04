@@ -77,7 +77,7 @@ class Machine < ApplicationRecord
     messages << @status
   end
   
-  def info_commad(command)
+  def info_command(command)
     connect
     if @status == 'Good'
       @socket.puts command
