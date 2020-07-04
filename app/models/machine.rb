@@ -47,7 +47,7 @@ class Machine < ApplicationRecord
         result[:timecode] = elements[elements.length - 2]
         filename = ''
         elements[1..elements.length-3].each do |section|
-          filname = filename + ' ' + section
+          filename = filename + ' ' + section
         end
         result[:filename] = filename.strip
         results << result
