@@ -36,7 +36,24 @@ class Machine < ApplicationRecord
   end
   
   def list
-    simple_command "clips get\r\n"
+    details = info_command "clips get\r\n"
+    results = []
+    if details[0] == '205 clips info:'
+      details[2..details.length-1].each do |item|
+        elements = item.split(' ')
+        result = Hash.new
+        result[:number] = elements[0].to_i
+        result[:duration] = elements[elements.length - 1]
+        result[:timecode] = elements[element.length - 2]
+        filename = ''
+        elements[1..elements.length-3].each do |section|
+          filname = filename + ' ' + section
+        end
+        result[:filename] = filename.strip
+        results << result
+      end
+    end
+    results  
   end
   
   def slot_info
