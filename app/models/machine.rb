@@ -40,7 +40,15 @@ class Machine < ApplicationRecord
   end
   
   def slot_info
-    info_command "slot info\r\n"
+    result = Hash.new
+    details = info_command "slot info\r\n"
+    details.each do |detail|
+      item = detail.split(': ')
+      if item.length == 2
+        result[item[0]] = item[1]
+      end
+    end
+    result  
   end
   
   def info
