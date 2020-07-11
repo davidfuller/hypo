@@ -87,7 +87,7 @@ class Machine < ApplicationRecord
   end
   
   def read_message
-    @socket.gets.chomp
+    @socket.gets.chomp.encode!('UTF-8')
   end
   
   def simple_command(command)
