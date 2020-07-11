@@ -59,6 +59,7 @@ class Machine < ApplicationRecord
   def slot_info
     result = Hash.new
     details = info_command "slot info\r\n"
+    details.encode!('UTF-8')
     details.each do |detail|
       item = detail.split(': ')
       if item.length == 2
