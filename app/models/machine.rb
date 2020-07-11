@@ -59,7 +59,6 @@ class Machine < ApplicationRecord
   def slot_info
     result = Hash.new
     details = info_command "slot info\r\n"
-    details.encode!('UTF-8')
     details.each do |detail|
       item = detail.split(': ')
       if item.length == 2
@@ -82,7 +81,7 @@ class Machine < ApplicationRecord
   def read_messages
     lines = []
     while (line = @socket.gets) && line.chomp != '' # While the client is connected, and hasn't sent us a blank line yet...
-      lines << line.chomp
+      lines << line.chomp.encode!('UTF-8')
     end
     lines
   end
