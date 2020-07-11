@@ -62,7 +62,7 @@ class Machine < ApplicationRecord
     details.each do |detail|
       item = detail.split(': ')
       if item.length == 2
-        result[item[0].to_sym] = item[1]
+        result[item[0].parameterize(separator: '_').to_sym] = item[1]
       end
     end
     result  
