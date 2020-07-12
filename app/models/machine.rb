@@ -61,6 +61,11 @@ class Machine < ApplicationRecord
     details_to_hash details  
   end
   
+  def transport_info
+    details = info_command 'transport info\r\n'
+    details_to_hash details
+  end
+  
   def info
     @socket.puts "transport info\r\n"
     read_messages
