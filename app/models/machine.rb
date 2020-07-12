@@ -57,15 +57,8 @@ class Machine < ApplicationRecord
   end
   
   def slot_info
-    result = Hash.new
     details = info_command "slot info\r\n"
-    details.each do |detail|
-      item = detail.split(': ')
-      if item.length == 2
-        result[item[0].parameterize(separator: '_').to_sym] = item[1]
-      end
-    end
-    result  
+    details_to_hash details  
   end
   
   def info
@@ -112,6 +105,17 @@ class Machine < ApplicationRecord
       messages = []
     end
     messages
+  end
+  
+  def details_to_hash(details)
+    result = Hash.new
+    details.each do |detail|
+      item = detail.split(': ')
+      if item.length == 2
+        result[item[0].parameterize(separator: '_').to_sym] = item[1]
+      end
+    end
+    result
   end
     
   
