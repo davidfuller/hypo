@@ -62,7 +62,7 @@ class Machine < ApplicationRecord
   end
   
   def transport_info
-    details = info_command 'transport info\r\n'
+    details = info_command "transport info\r\n"
     details_to_hash details
   end
   
