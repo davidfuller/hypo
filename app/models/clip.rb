@@ -25,9 +25,9 @@ class Clip < ApplicationRecord
   private
   def self.name_from_filename(filename)
     if filename.include?('.mov')
-      result = filename.gsub('.mov', '').lowercase
+      result = filename.gsub('.mov', '').downcase
     else
-      result = filename.lowercase
+      result = filename.downcase
     end
     result
   end
