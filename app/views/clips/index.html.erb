@@ -5,6 +5,7 @@
 <table class='table'>
   <thead>
     <tr>
+      <th>Volume</th>
       <th>Slot</th>
       <th>Number</th>
       <th>Name</th>
@@ -19,13 +20,14 @@
   <tbody>
     <% @clips.each do |clip| %>
       <tr>
+        <td><%= clip.volume %></td>
         <td><%= clip.slot %></td>
         <td><%= clip.number %></td>
         <td><%= clip.name %></td>
         <td><%= clip.filename %></td>
         <td><%= clip.timecode %></td>
         <td><%= clip.duration %></td>
-        <td><%= clip.machine_id %></td>
+        <td><%= clip.machine.name if clip.machine %></td>
         <td><%= link_to 'Show', clip %></td>
         <td><%= link_to 'Edit', edit_clip_path(clip) %></td>
         <td><%= link_to 'Destroy', clip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
