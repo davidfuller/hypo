@@ -1,39 +1,72 @@
 <p id="notice"><%= notice %></p>
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-3'>
+      <strong>Slot</strong>
+    </div>
+    <div class = 'col-3'>
+      <%= @clip.slot %>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-3'>
+      <strong>Volume</strong>
+    </div>
+    <div class = 'col-3'>
+      <%= @clip.volume %>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-3'>
+      <strong>Number</strong>
+    </div>
+    <div class = 'col-3'>
+      <%= @clip.number %>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-3'>
+      <strong>Name</strong>
+    </div>
+    <div class = 'col-3'>
+      <%= @clip.name %>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-3'>
+      <strong>Filename</strong>
+    </div>
+    <div class = 'col-3'>
+      <%= @clip.filename %>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-3'>
+      <strong>Timecode</strong>
+    </div>
+    <div class = 'col-3'>
+      <%= @clip.timecode %>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-3'>
+      <strong>Duration</strong>
+    </div>
+    <div class = 'col-3'>
+      <%= @clip.duration %>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-3'>
+      <strong>Machine</strong>
+    </div>
+    <div class = 'col-3'>
+      <%= @clip.machine_id %>
+    </div>
+  </div>
 
-<p>
-  <strong>Slot:</strong>
-  <%= @clip.slot %>
-</p>
+  <%= link_to 'Edit', edit_clip_path(@clip) %> |
+  <%= link_to 'Back', clips_path %>
+</div>
 
-<p>
-  <strong>Number:</strong>
-  <%= @clip.number %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @clip.name %>
-</p>
-
-<p>
-  <strong>Filename:</strong>
-  <%= @clip.filename %>
-</p>
-
-<p>
-  <strong>Timecode:</strong>
-  <%= @clip.timecode %>
-</p>
-
-<p>
-  <strong>Duration:</strong>
-  <%= @clip.duration %>
-</p>
-
-<p>
-  <strong>Machine:</strong>
-  <%= @clip.machine_id %>
-</p>
-
-<%= link_to 'Edit', edit_clip_path(@clip) %> |
-<%= link_to 'Back', clips_path %>
+  
