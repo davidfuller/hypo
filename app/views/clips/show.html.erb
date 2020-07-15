@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class = 'container'>
   <div class = 'row'>
-    <div class = 'col-1'>
+    <div class = 'col-2 text-right'>
       <strong>Slot</strong>
     </div>
     <div class = 'col-3'>
@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-1'>
+    <div class = 'col-2 text-right'>
       <strong>Volume</strong>
     </div>
     <div class = 'col-3'>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-1'>
+    <div class = 'col-2 text-right'>
       <strong>Number</strong>
     </div>
     <div class = 'col-3'>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-1'>
+    <div class = 'col-2 text-right'>
       <strong>Name</strong>
     </div>
     <div class = 'col-3'>
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-1'>
+    <div class = 'col-2 text-right'>
       <strong>Filename</strong>
     </div>
     <div class = 'col-3'>
@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-1'>
+    <div class = 'col-2 text-right'>
       <strong>Timecode</strong>
     </div>
     <div class = 'col-3'>
@@ -49,7 +49,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-1'>
+    <div class = 'col-2 text-right'>
       <strong>Duration</strong>
     </div>
     <div class = 'col-3'>
@@ -57,16 +57,19 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-1'>
+    <div class = 'col-2 text-right'>
       <strong>Machine</strong>
     </div>
     <div class = 'col-3'>
       <%= @clip.machine.name if @clip.machine %>
     </div>
   </div>
-
-  <%= link_to 'Edit', edit_clip_path(@clip) %> |
-  <%= link_to 'Back', clips_path %>
+  
+  <div class = 'row'></div>
+    <%= link_to 'Edit', edit_clip_path(@clip) %> |
+    <%= link_to 'Back', clips_path %>
+  </div>
+  
 </div>
 
   
