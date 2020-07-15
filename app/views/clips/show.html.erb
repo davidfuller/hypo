@@ -64,14 +64,10 @@
       <%= @clip.machine.name if @clip.machine %>
     </div>
   </div>
-  
-  <div class = 'row align-items-end'></div>
-    <div class = 'col-2 text-right'>
-      <%= link_to 'Edit', edit_clip_path(@clip) %> |
-      <%= link_to 'Back', clips_path %>
-    </div>
-  </div>
-  
 </div>
+  
+<br />
+<%= link_to 'Edit', edit_clip_path(@clip) %> |
+<%= link_to 'Back', clips_path %>
 
   
