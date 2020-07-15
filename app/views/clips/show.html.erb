@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class = 'container'>
   <div class = 'row'>
-    <div class = 'col-3'>
+    <div class = 'col-1'>
       <strong>Slot</strong>
     </div>
     <div class = 'col-3'>
@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-3'>
+    <div class = 'col-1'>
       <strong>Volume</strong>
     </div>
     <div class = 'col-3'>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-3'>
+    <div class = 'col-1'>
       <strong>Number</strong>
     </div>
     <div class = 'col-3'>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-3'>
+    <div class = 'col-1'>
       <strong>Name</strong>
     </div>
     <div class = 'col-3'>
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-3'>
+    <div class = 'col-1'>
       <strong>Filename</strong>
     </div>
     <div class = 'col-3'>
@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-3'>
+    <div class = 'col-1'>
       <strong>Timecode</strong>
     </div>
     <div class = 'col-3'>
@@ -49,7 +49,7 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-3'>
+    <div class = 'col-1'>
       <strong>Duration</strong>
     </div>
     <div class = 'col-3'>
@@ -57,11 +57,11 @@
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-3'>
+    <div class = 'col-1'>
       <strong>Machine</strong>
     </div>
     <div class = 'col-3'>
-      <%= @clip.machine_id %>
+      <%= @clip.machine.name if @clip.machine %>
     </div>
   </div>
 
