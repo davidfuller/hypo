@@ -73,6 +73,7 @@ class MachinesController < ApplicationController
   
   def list
     #@messages = @machine.list
+    Clip.destroy_by(machine_id: @machine.id)
     redirect_to clips_url
   end
 
