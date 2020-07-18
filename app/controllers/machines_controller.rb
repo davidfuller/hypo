@@ -72,8 +72,8 @@ class MachinesController < ApplicationController
   end
   
   def list
-    @messages = @machine.list
-    render :show
+    #@messages = @machine.list
+    redirect_to clips_url
   end
 
   private
