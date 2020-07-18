@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Clips</h1>
+<%= render 'search', path: clips_path, remote: false, search: :search, name: nil %>
+
 
 <table class='table'>
   <thead>
