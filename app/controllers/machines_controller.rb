@@ -74,6 +74,9 @@ class MachinesController < ApplicationController
   def list
     #@messages = @machine.list
     Clip.destroy_by(machine_id: @machine.id)
+    slot = @machine.slot_info
+    list = @machine.list
+    Clip.new_clip_from_list(slot, list[1], @machine.id)
     redirect_to clips_url
   end
 
