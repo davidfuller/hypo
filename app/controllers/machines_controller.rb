@@ -76,7 +76,9 @@ class MachinesController < ApplicationController
     Clip.destroy_by(machine_id: @machine.id)
     slot = @machine.slot_info
     list = @machine.list
-    Clip.new_clip_from_list(slot, list[1], @machine.id)
+    list.each do |clip|
+      Clip.new_clip_from_list(slot, clip, @machine.id)
+    end
     redirect_to clips_url
   end
 
