@@ -4,7 +4,7 @@ class ClipsController < ApplicationController
   # GET /clips
   # GET /clips.json
   def index
-    @clips = Clip.all
+    @clips = Clip.search(params[:search])
   end
 
   # GET /clips/1
