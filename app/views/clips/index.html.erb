@@ -3,7 +3,7 @@
 <h1>Clips</h1>
 <%= render 'search', path: clips_path, remote: false, search: :search, name: nil %>
 
-<%= will_paginate @clips %>
+<%= my_paginate @clips %>
 
 <table class='table'>
   <thead>
