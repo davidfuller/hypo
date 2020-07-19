@@ -1,5 +1,7 @@
 # File config/initializers/will_paginate.rb
 # From https://gist.github.com/1214011
+require 'will_paginate/view_helpers/link_renderer'
+require 'will_paginate/view_helpers/action_view'
 
 module WillPaginate
     module ActionView
