@@ -1,11 +1,13 @@
 class Clip < ApplicationRecord
   belongs_to :machine
   
-  def self.search(search)
+  self.per_page = 12
+  
+  def self.search(search, page)
     if search
-      where("name LIKE ?", "%" + search + "%")
+      where("name LIKE ?", "%" + search + "%").page(page)
     else
-      all
+      all.page(page)
     end
   end
   
