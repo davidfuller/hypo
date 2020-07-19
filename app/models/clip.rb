@@ -2,7 +2,11 @@ class Clip < ApplicationRecord
   belongs_to :machine
   
   def self.search(search)
-    where("name LIKE ?", "%" + search + "%")
+    if search
+      where("name LIKE ?", "%" + search + "%")
+    else
+      all
+    end
   end
   
   def self.split_line(text_line)
