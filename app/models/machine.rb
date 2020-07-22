@@ -55,6 +55,21 @@ class Machine < ApplicationRecord
     end
     results  
   end
+
+  def slot_select(slot)
+    detail = standard_command "slot select: slot id:" + slot.to_s
+    detail == '200 ok'
+  end
+
+  def clip_select(number)
+    detail = standard_command "goto: clip id:" + number.to_s
+    if detail == '200 ok'
+      detail = standard_command "goto: clip: 1" 
+      detail == '200 ok'
+    else
+      false
+    end
+  end
   
   def slot_info
     details = info_command "slot info\r\n"
@@ -121,6 +136,18 @@ class Machine < ApplicationRecord
       end
     end
     result
+  end
+
+  def standard_command(command)
+    connect
+    if @status == 'Good'
+      @socket.puts command
+      message = read_message
+      close
+    else
+      messages = 'Not connected'
+    end
+    message
   end
     
   

@@ -30,6 +30,15 @@ class Clip < ApplicationRecord
     clip.save
     
   end
+
+  def queue
+    machine = Machine.find(self.machine_id)
+    if machine
+      machine.stop
+      machine.slot_select(self.slot)
+      machine.clip_select(self.number)
+    end
+  end
   
   private
   def self.name_from_filename(filename)

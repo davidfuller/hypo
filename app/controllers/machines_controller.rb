@@ -72,12 +72,16 @@ class MachinesController < ApplicationController
   end
   
   def list
-    #@messages = @machine.list
     Clip.destroy_by(machine_id: @machine.id)
-    slot = @machine.slot_info
-    list = @machine.list
-    list.each do |clip|
-      Clip.new_clip_from_list(slot, clip, @machine.id)
+    
+    for slot_number in 1..2 do
+      if @machine.slot_select slot_number
+        slot = @machine.slot_info
+        list = @machine.list
+        list.each do |clip|
+          Clip.new_clip_from_list(slot, clip, @machine.id)
+        end
+      end
     end
     redirect_to clips_url
   end
