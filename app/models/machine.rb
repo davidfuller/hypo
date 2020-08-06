@@ -13,6 +13,9 @@ class Machine < ApplicationRecord
     rescue Errno::ETIMEDOUT
       @status = 'Timeout'
       message = ['Not connected']
+    rescue Errno:EHOSTUNREACH
+      @status = 'Un-reachable'
+      message = ['Machine not reachable']
     end
   end
   
